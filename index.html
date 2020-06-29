@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业站</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.1.2/react-router-dom.js"></script>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="lazysizes.min.js" async=""></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body id="container" class="container">
+    <script type="text/babel">
+        class Nav extends React.Component {
+            render() {
+                return (
+                    <nav class="navbar navbar-expand-md bg-light navbar-light">
+                        <a class="navbar-brand" href="index.html"><img src="images/5.png" width="35%"/></a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar" style={{flexDirection:'row-reverse'}}>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">首页</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="news.html">新闻中心</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">关于我们</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                );
+            }
+        }
+
+        class Header extends React.Component {
+            render() {
+                return <header id='demo' className='carousel slide' data-ride="carousel">
+
+                    <ul className='carousel-indicators'>
+                        <li data-target="#demo" data-slide-to="0" className='active'></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+
+                    <div className='carousel-inner'>
+                        <div className='carousel-item active'>
+                            <img data-src="images/banner1.jpg" class="lazyload" ></img>
+                        </div>
+                        <div className='carousel-item'>
+                            <img data-src="images/banner2.jpg" class="lazyload"></img>
+                        </div>
+                        <div className='carousel-item'>
+                            <img data-src="images/banner3.jpg" class="lazyload"></img>
+                        </div>
+
+                        <a className='carousel-control-prev' href="#demo" data-slide="prev">
+                            <span className="carousel-control-prev-icon"></span>
+                        </a>
+                        <a className='carousel-control-next' href="#demo" data-slide="next">
+                            <span className='carousel-control-next-icon'></span>
+                        </a>
+
+                    </div>
+                </header>;
+            }
+        }
+
+
+        class Body extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = { list: [] };
+            }
+
+            componentDidMount() {
+                axios.get('API/index.json')
+                    .then(res => {
+                        console.log(res.data.data)
+                        this.setState({ list: res.data.data })
+                        console.log(this.state)
+                    })
+            }
+
+            toPage = (key) => {
+                window.location.href = `newsdetial.html?query1${key}a`
+            }
+
+            render() {
+                const list = this.state.list.map((item, key) =>
+                    <li key={item.id} style={{ padding: 50, backgroundColor: '#f6f6f6', margin: 5, listStyle: 'none' }} onClick={() => this.toPage(key)}>
+                        <h3 style={{ textAlign: 'center' }}>#{key + 1}</h3>
+                        <img src={item.image} width="190" height="190"></img>
+                        <p>电影名: {item.name}</p>
+                        <p>主演：{item.actor}</p>
+                        <p>上映日期：{item.date} </p>
+                    </li>
+                );
+
+                return <main>
+                    <br></br>
+                    <h2 id='h2'>服务范围</h2>
+                    <br></br>
+                    <div className='Service'>
+                        <div class=" col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+                            <img data-src='images/fuwu1.png' style={{ width: "60%" }} class="lazyload"></img>
+                            <p>打击犯罪</p>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+                            <img data-src='images/fuwu2.png' style={{ width: "60%" }} class="lazyload"></img>
+                            <p>维护和平</p>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+                            <img data-src='images/fuwu3.png' style={{ width: "60%" }} class="lazyload"></img>
+                            <p>正义联盟</p>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+                            <img data-src='images/fuwu4.png' style={{ width: "60%" }} class="lazyload"></img>
+                            <p>保卫地球</p>
+                        </div>
+                    </div>
+
+
+
+                    <br></br>
+
+
+                    <h2 id='h3'>团队介绍</h2>
+                    <br></br>
+
+                    <div className='Team'>
+                        <div id='Joker' class="row">
+                            <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img data-sizes="auto" data-src="images/1.jpg" data-srcset="images/low1.jpg 100w, images/low2.jpg 900w"  width="100%" class="lazyload"></img></div>
+                            <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+                        </div>
+                        <div id='Superman' class="row">
+                            <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img data-src='images/2.jpg' width="100%" class="lazyload"></img></div>
+                            <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+                        </div>
+                        <div id='Americancaptain' class="row">
+                            <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img data-src='images/3.jpg' width="100%" class="lazyload"></img></div>
+                            <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+                        </div>
+                        <div id='Batman' class="row">
+                            <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img data-src='images/4.jpg' width="100%" class="lazyload"></img></div>
+                            <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+                        </div>
+
+                    </div>
+
+
+
+                    <br></br>
+
+
+                    <h2 id='h4'>新闻中心</h2>
+                    <br></br>
+                    <div className='News'>
+                        <ul>
+                            {list}
+                        </ul>
+                    </div>
+
+                </main>;
+            }
+        }
+
+        class Footer extends React.Component {
+            render() {
+                return <footer className='Footer'>
+
+
+                    <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
+                        <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
+                        <p>福州</p>
+                    </div>
+                    <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+                        <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
+                        <p>110</p>
+                    </div>
+                    <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+                        <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"></img>
+                        <p>8888888@qq.com</p>
+                    </div>
+                    <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+                        <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
+                        <p>扫描加入我们</p>
+                    </div>
+
+                </footer>;
+            }
+
+        }
+
+        ReactDOM.render(
+            <React.Fragment>
+                <Nav />
+                <Header />
+                <Body />
+                <Footer />
+            </React.Fragment>,
+            document.getElementById("container")
+        );
+
+    </script>
+</body>
+
+</html>
