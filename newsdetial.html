@@ -65,7 +65,7 @@
                 const num = id.substring(6, 9);
                 console.log(num)
 
-                axios.get(`API/${num}.json`)
+                axios.get(`https://mock-api.com/dnooblnX.mock/${num}`)
                     .then(res => {
                         console.log(res.data.data)
                         this.setState({ list: res.data.data })
@@ -78,7 +78,7 @@
                     <li key={item.id} style={{ listStyle: 'none' }}>
                         <h3>{item.name}</h3>
                         <p>{item.date}</p>
-                        <img data-src={item.image} ></img>
+                        <img src={item.image} ></img>
                         <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;{item.info}</p>
                     </li>
                 );
