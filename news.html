@@ -2,151 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>企业站</title>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- 新 Bootstrap4 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="lazysizes.min.js" async=""></script>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企业站</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- 新 Bootstrap4 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="lazysizes.min.js" async=""></script>
+  <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body id="container" class="container">
-    <script type="text/babel">
+  <script type="text/babel">
 
-        class Nav extends React.Component {
-            render() {
-                return (
-                    <nav class="navbar navbar-expand-md bg-light navbar-light">
-                        <a class="navbar-brand" href="index.html"><img src="images/5.png" width="35%" /></a>
+    class Nav extends React.Component {
+      render() {
+        return (
+          <nav class="navbar navbar-expand-md bg-light navbar-light">
+            <a class="navbar-brand" href="index.html"><img src="images/5.png" width="35%" /></a>
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <div class="collapse navbar-collapse" id="collapsibleNavbar" style={{ flexDirection: 'row-reverse' }}>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">首页</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="news.html">新闻中心</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.html">关于我们</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                );
-            }
-        }
+            <div class="collapse navbar-collapse" id="collapsibleNavbar" style={{ flexDirection: 'row-reverse' }}>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">首页</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="news.html">新闻中心</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">关于我们</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        );
+      }
+    }
 
-        class Body extends React.Component {
-            constructor(props) {
-                super(props)
-                this.state = { list: [], currentpage: '' };
-            }
+    class Body extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { list: [], currentpage: '' };
+      }
 
-            componentDidMount() {
-                this.changepage(1)
-                console.log(this.state.currentpage)
-            }
+      componentDidMount() {
+        this.changepage(1)
+        console.log(this.state.currentpage)
+      }
 
-            changepage = (pagedata) => {
-                const baseUrl = `https://mock-api.com/dnooblnX.mock/${pagedata}`
-                this.setState({ currentpage: pagedata })
-
-
-                axios.get(baseUrl)
-                    .then(res => {
-                        console.log(res.data.data)
-                        this.setState({ list: res.data.data })
-                        console.log(this.state)
-                    })
-
-            }
-
-            toPage = (key) => {
-                window.location.href = `newsdetial.html?query${this.state.currentpage}${key}a`
-            }
-
-            render() {
-                const list = this.state.list.map((item, key) =>
-                    <li class="col-sm-3 col-lg-3 col-xl-3 col-12"
-                        key={item.id} style={{ padding: 30, backgroundColor: '#f6f6f6', margin: 5, listStyle: 'none' }} onClick={() => this.toPage(key)}>
-                        <h3 style={{ textAlign: 'center' }}>#{key + 1}</h3>
-                        <img src={item.image} width="100%"></img>
-                        <p>电影名: {item.name}</p>
-                        <p>主演：{item.actor}</p>
-                        <p>上映日期：{item.date} </p>
-                    </li>
-                );
-
-                return <main className="newscenter">
-                    <h2 id='h4'>新闻中心</h2>
-                    <div class="row" style={{justifyContent:'center'}}>
-                        {list}
-                    </div>
-
-                    <div className='main'>
-                        <ul className="page">
-                            {[1, 2, 3].map(item => <li key={item} onClick={() => this.changepage(item)}>{item}</li>)}
-                        </ul>
-                    </div>
-                </main>;
-            }
-        }
+      changepage = (pagedata) => {
+        const baseUrl = `https://mock-api.com/dnooblnX.mock/${pagedata}`
+        this.setState({ currentpage: pagedata })
 
 
-        class Footer extends React.Component {
-            render() {
-                return <footer className='Footer'>
+        axios.get(baseUrl)
+          .then(res => {
+            console.log(res.data.data)
+            this.setState({ list: res.data.data })
+            console.log(this.state)
+          })
 
+      }
 
-                    <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>福州</p>
-                    </div>
-                    <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>110</p>
-                    </div>
-                    <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>8888888@qq.com</p>
-                    </div>
-                    <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>扫描加入我们</p>
-                    </div>
+      toPage = (key) => {
+        window.location.href = `newsdetial.html?query${this.state.currentpage}${key}a`
+      }
 
-                </footer>;
-            }
-
-        }
-
-
-        ReactDOM.render(
-            <React.Fragment>
-                <Nav />
-                <Body />
-                <Footer />
-            </React.Fragment>,
-            document.getElementById('container')
+      render() {
+        const list = this.state.list.map((item, key) =>
+          <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{textAlign:'center'}}>
+            <h3>#{key + 1}</h3>
+            <img class="card-img-top" src={item.image} style={{width:'100%',height:'50%'}}></img>
+            <div class="card-body">
+              <h4 class="card-title">电影名: {item.name}</h4>
+              <p class="card-text">主演：{item.actor}</p>
+              <p >上映日期：{item.date} </p>
+            </div>
+          </div>
         );
 
-    </script>
+        return <main className="newscenter" class="row">
+          <h2 id='h4' class=" col-sm-12 col-lg-12 col-xl-12 col-12">新闻中心</h2>
+          <div class="row" >
+            {list}
+          </div>
+
+          <div class="page col-sm-12 col-lg-12 col-xl-12 col-12">
+            {[1, 2, 3].map(item => <li key={item} onClick={() => this.changepage(item)}>{item}</li>)}
+          </div>
+
+        </main>;
+      }
+    }
+
+
+    class Footer extends React.Component {
+      render() {
+        return <footer className='Footer'>
+
+
+          <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
+            <p>福州</p>
+          </div>
+          <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
+            <p>110</p>
+          </div>
+          <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"></img>
+            <p>8888888@qq.com</p>
+          </div>
+          <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
+            <p>扫描加入我们</p>
+          </div>
+
+        </footer>;
+      }
+
+    }
+
+    ReactDOM.render(
+      <React.Fragment>
+        <Nav />
+        <Body />
+        <Footer />
+      </React.Fragment>,
+      document.getElementById('container')
+    );
+
+  </script>
 </body>
 
 </html>
