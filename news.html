@@ -83,9 +83,9 @@
 
       render() {
         const list = this.state.list.map((item, key) =>
-          <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{textAlign:'center'}}>
+          <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{ textAlign: 'center' }}>
             <h3>#{key + 1}</h3>
-            <img class="card-img-top" src={item.image} style={{width:'100%',height:'50%'}}></img>
+            <img class="card-img-top" src={item.image} style={{ width: '100%', height: '50%' }}></img>
             <div class="card-body">
               <h4 class="card-title">电影名: {item.name}</h4>
               <p class="card-text">主演：{item.actor}</p>
@@ -100,11 +100,23 @@
             {list}
           </div>
 
-          <div class="page col-sm-12 col-lg-12 col-xl-12 col-12">
-            {[1, 2, 3].map(item => <li key={item} onClick={() => this.changepage(item)}>{item}</li>)}
-          </div>
+          < div class="page col-sm-12 col-lg-12 col-xl-12 col-12">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item ">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item" onClick={() => this.changepage(1)}><a class="page-link" href="#">1</a></li>
+                <li class="page-item" onClick={() => this.changepage(2)}><a class="page-link" href="#">2</a></li>
+                <li class="page-item" onClick={() => this.changepage(3)}><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
 
-        </main>;
+          </div>
+        </main >;
       }
     }
 
@@ -112,6 +124,25 @@
     class Footer extends React.Component {
       render() {
         return <footer className='Footer'>
+
+          <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">联系我们</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  请发送邮件至我们的邮箱
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
 
 
           <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
@@ -123,7 +154,7 @@
             <p>110</p>
           </div>
           <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"></img>
+            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"  data-toggle="modal" data-target="#myModal"></img>
             <p>8888888@qq.com</p>
           </div>
           <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>

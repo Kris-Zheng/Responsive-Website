@@ -165,17 +165,6 @@
   margin: 20px;
 }
 
-.page li{
-  display: inline;
-
-  border-color:lightgray;
-  font-size: 30px;
-  border-style: solid;
-  cursor: pointer;
-  padding: 10px
-}
-
-
 .Newsdetial {
     width: 100%;
     max-width: 1200px;

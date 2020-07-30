@@ -106,9 +106,9 @@
 
       render() {
         const list = this.state.list.map((item, key) =>
-          <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{textAlign:'center'}}>
+          <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{ textAlign: 'center' }}>
             <h3>#{key + 1}</h3>
-            <img class="card-img-top" src={item.image} style={{width:'100%',height:'50%'}}></img>
+            <img class="card-img-top" src={item.image} style={{ width: '100%', height: '50%' }}></img>
             <div class="card-body">
               <h4 class="card-title">电影名: {item.name}</h4>
               <p class="card-text">主演：{item.actor}</p>
@@ -154,9 +154,9 @@
                 <img
                   data-sizes="auto"
                   data-src="images/1.jpg"
-                  data-srcset="images/low1.jpg 300w,
+                  data-srcset="images/cat.jpg 300w,
                                     images/1.jpg 600w,
-                                    images/low1.jpg 900w" class="lazyload"
+                                    images/cat.jpg 900w" class="lazyload"
                   width="100%"
                 />
               </div>
@@ -166,9 +166,9 @@
               <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img
                 data-sizes="auto"
                 data-src="images/2.jpg"
-                data-srcset="images/low2.jpg 300w,
+                data-srcset="images/cat.jpg 300w,
                                     images/2.jpg 600w,
-                                    images/low2.jpg 900w" class="lazyload"
+                                    images/cat.jpg 900w" class="lazyload"
                 width="100%"
               /></div>
               <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
@@ -177,9 +177,9 @@
               <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img
                 data-sizes="auto"
                 data-src="images/3.jpg"
-                data-srcset="images/low3.jpg 300w,
+                data-srcset="images/cat.jpg 300w,
                                     images/3.jpg 600w,
-                                    images/low3.jpg 900w" class="lazyload"
+                                    images/cat.jpg 900w" class="lazyload"
                 width="100%"
               /></div>
               <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
@@ -188,9 +188,9 @@
               <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img
                 data-sizes="auto"
                 data-src="images/4.jpg"
-                data-srcset="images/low4.jpg 300w,
+                data-srcset="images/cat.jpg 300w,
                                     images/4.jpg 600w,
-                                    images/low4.jpg 900w" class="lazyload"
+                                    images/cat.jpg 900w" class="lazyload"
                 width="100%"
               /></div>
               <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
@@ -206,7 +206,7 @@
           <h2 id='h4'>新闻中心</h2>
           <br></br>
           <div class="row">
-              {list}
+            {list}
           </div>
 
         </main>;
@@ -216,6 +216,24 @@
     class Footer extends React.Component {
       render() {
         return <footer className='Footer'>
+
+          <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">联系我们</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  请发送邮件至我们的邮箱
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
 
 
           <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
@@ -227,7 +245,7 @@
             <p>110</p>
           </div>
           <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"></img>
+            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload" data-toggle="modal" data-target="#myModal"></img>
             <p>8888888@qq.com</p>
           </div>
           <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>

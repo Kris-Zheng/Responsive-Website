@@ -2,136 +2,154 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>企业站</title>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- 新 Bootstrap4 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="lazysizes.min.js" async=""></script>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企业站</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- 新 Bootstrap4 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="lazysizes.min.js" async=""></script>
+  <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body id="container" class="container">
-    <script type="text/babel">
+  <script type="text/babel">
 
-        class Nav extends React.Component {
-            render() {
-                return (
-                    <nav class="navbar navbar-expand-md bg-light navbar-light">
-                        <a class="navbar-brand" href="index.html"><img src="images/5.png" width="35%" /></a>
+    class Nav extends React.Component {
+      render() {
+        return (
+          <nav class="navbar navbar-expand-md bg-light navbar-light">
+            <a class="navbar-brand" href="index.html"><img src="images/5.png" width="35%" /></a>
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <div class="collapse navbar-collapse" id="collapsibleNavbar" style={{ flexDirection: 'row-reverse' }}>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">首页</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="news.html">新闻中心</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.html">关于我们</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                );
-            }
-        }
+            <div class="collapse navbar-collapse" id="collapsibleNavbar" style={{ flexDirection: 'row-reverse' }}>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">首页</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="news.html">新闻中心</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">关于我们</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        );
+      }
+    }
 
-        class Body extends React.Component {
+    class Body extends React.Component {
 
-            render() {
-                return <main className='about'>
+      render() {
+        return <main className='about'>
 
-                    <h1 id='h3'>关于我们</h1>
-                    <div id='aboutContent'>
-                        <p>一切从美国正义协会开始......
+          <h1 id='h3'>关于我们</h1>
+          <div id='aboutContent'>
+            <p>一切从美国正义协会开始......
 
-                        在“漫画的黄金时代”，超人、蝙蝠侠、闪电侠、鹰侠等超级英雄先后诞生，DC漫画群星璀璨。
+            在“漫画的黄金时代”，超人、蝙蝠侠、闪电侠、鹰侠等超级英雄先后诞生，DC漫画群星璀璨。
 
-                        1940年，《全明星漫画》第3期讲述了美国正义协会的诞生，它包括：闪电侠、鹰侠、绿灯侠、原子侠、幽灵、命运博士、时侠、睡魔。这是漫画世上第一个超级英雄团队，可是在漫画中团队成员并没有齐心协力、通力合作，而是每个角色都拥有属于自己的章节。直到漫画篇幅减少，在这个超级英雄团队中才慢慢凸现出合作的原则。这期间也有很多超级英雄团队出现，如胜利七战士等，但大都是昙花一现。（此时的正义协会是黄金时代的设定，与美剧《明日传奇》中的并不相同）
+            1940年，《全明星漫画》第3期讲述了美国正义协会的诞生，它包括：闪电侠、鹰侠、绿灯侠、原子侠、幽灵、命运博士、时侠、睡魔。这是漫画世上第一个超级英雄团队，可是在漫画中团队成员并没有齐心协力、通力合作，而是每个角色都拥有属于自己的章节。直到漫画篇幅减少，在这个超级英雄团队中才慢慢凸现出合作的原则。这期间也有很多超级英雄团队出现，如胜利七战士等，但大都是昙花一现。（此时的正义协会是黄金时代的设定，与美剧《明日传奇》中的并不相同）
 
-                        1951年，“漫画的黄金时代”告终，美国正义协会也完成了他们最后的一次历险。
-                        至此，美国正义协会和它的英雄们都消失了，但没有离开。
+            1951年，“漫画的黄金时代”告终，美国正义协会也完成了他们最后的一次历险。
+            至此，美国正义协会和它的英雄们都消失了，但没有离开。
 
-                        1956年，DC漫画开始出版《展示橱》，它每期都会刊登一名超级英雄的故事，以测试读者更加偏爱哪一类英雄。直到第4期展出了如今最受欢迎的二代闪电侠巴里·艾伦，这一角色的诞生迅速吸引了大量人气。连锁效应在此发生，带有科学印记的英雄越来越受欢迎，新的超级英雄接连登场，从此美国漫画进入“白银时代”。
+            1956年，DC漫画开始出版《展示橱》，它每期都会刊登一名超级英雄的故事，以测试读者更加偏爱哪一类英雄。直到第4期展出了如今最受欢迎的二代闪电侠巴里·艾伦，这一角色的诞生迅速吸引了大量人气。连锁效应在此发生，带有科学印记的英雄越来越受欢迎，新的超级英雄接连登场，从此美国漫画进入“白银时代”。
 
-                        随着漫画行业的回暖，漫画的类型也逐渐增多，闪电侠等超级英雄也拿回了自己的独立刊物。
+            随着漫画行业的回暖，漫画的类型也逐渐增多，闪电侠等超级英雄也拿回了自己的独立刊物。
 
-                        1960年，美国小街的杂货店里，上架了最后一批刊物。《超人》，《蝙蝠侠》，《神奇女侠》，《闪电侠》，《绿灯侠》，《英勇无畏》被摆放在书架上，然而这次的《英勇无畏》有所不同，它成立了一个名为“美国正义联盟”的团队，它的成员是超人、蝙蝠侠、神奇女侠、火星猎人、绿灯侠、闪电侠、海王。但这一期的故事，名气最大的钢铁之躯和黑暗骑士将戏份让给了联盟的其它成员，5位英雄面对从外星降临的拥有巨大触手的斯塔罗齐心协力，共同从这位征服者的手中拯救了地球。
+            1960年，美国小街的杂货店里，上架了最后一批刊物。《超人》，《蝙蝠侠》，《神奇女侠》，《闪电侠》，《绿灯侠》，《英勇无畏》被摆放在书架上，然而这次的《英勇无畏》有所不同，它成立了一个名为“美国正义联盟”的团队，它的成员是超人、蝙蝠侠、神奇女侠、火星猎人、绿灯侠、闪电侠、海王。但这一期的故事，名气最大的钢铁之躯和黑暗骑士将戏份让给了联盟的其它成员，5位英雄面对从外星降临的拥有巨大触手的斯塔罗齐心协力，共同从这位征服者的手中拯救了地球。
 
-                        这无疑是漫迷们的一场狂欢，在仅6个月之后，正义联盟拥有了属于自己的刊名，它的故事得以延续下去。
+            这无疑是漫迷们的一场狂欢，在仅6个月之后，正义联盟拥有了属于自己的刊名，它的故事得以延续下去。
 
-                        自那以后，美国正义联盟开始了漫长的冒险。在不同编剧的努力下，属于联盟的内容逐渐充实起来，不同纬度的世界，魔法与科幻的交织，所有天马星空的幻想都可以在这里实现。
+            自那以后，美国正义联盟开始了漫长的冒险。在不同编剧的努力下，属于联盟的内容逐渐充实起来，不同纬度的世界，魔法与科幻的交织，所有天马星空的幻想都可以在这里实现。
 
-                        美国的60年代末动荡不安，美国正义联盟也是如此。有些成员离开，有些新英雄加入。其中最令人印象深刻的就是火星猎人的离开（《美国正义联盟71期》）。
+            美国的60年代末动荡不安，美国正义联盟也是如此。有些成员离开，有些新英雄加入。其中最令人印象深刻的就是火星猎人的离开（《美国正义联盟71期》）。
 
-                        火星猎人来到地球纯属意外。他作为火星上的一名军事领导人，指挥着一场世界范围内的内战，与之交手的是他的宿敌普朗克斯，但火星猎人最后中了埋伏，输掉了战争，自己也被流放在外。他在被流放的第一年便被地球上的科学家不小心传送到了地球上。
+            火星猎人来到地球纯属意外。他作为火星上的一名军事领导人，指挥着一场世界范围内的内战，与之交手的是他的宿敌普朗克斯，但火星猎人最后中了埋伏，输掉了战争，自己也被流放在外。他在被流放的第一年便被地球上的科学家不小心传送到了地球上。
 
-                        火星猎人在地球上蛰伏已久，终于拥有了回到火星的能力，却发现火星已是一片火海，普朗克斯为了取得火星的所有权，将其卖给星系代表，竟然开始屠杀火星上的人民。火星猎人利用地球上的知识建造了一艘太空飞船，以拯救剩余的子民。而后他穿越回地球，得到了正义联盟的帮助，击溃了普朗克斯的军队。最终普朗克斯落荒而逃，火星猎人一人追击。
+            火星猎人在地球上蛰伏已久，终于拥有了回到火星的能力，却发现火星已是一片火海，普朗克斯为了取得火星的所有权，将其卖给星系代表，竟然开始屠杀火星上的人民。火星猎人利用地球上的知识建造了一艘太空飞船，以拯救剩余的子民。而后他穿越回地球，得到了正义联盟的帮助，击溃了普朗克斯的军队。最终普朗克斯落荒而逃，火星猎人一人追击。
 
                         在缓缓降临的夜幕下，一个伟大文明的最终决战开始了，不论谁获胜，都将是火星上的最后一个人。当然，正义最终战胜了邪恶，火星猎人也与正义联盟作别，出发寻找幸存的人民。</p>
-                    </div>
-                    <div id='map'>
-                        <iframe src="map.html" width="100%" maxWidth="1200px" frameborder="0" scrolling="no"></iframe>
-                    </div>
+          </div>
+          <div id='map'>
+            <iframe src="map.html" width="100%" maxWidth="1200px" frameborder="0" scrolling="no"></iframe>
+          </div>
 
-                </main>;
-            }
-        }
+        </main>;
+      }
+    }
 
-        class Footer extends React.Component {
-            render() {
-                return <footer className='Footer'>
+    class Footer extends React.Component {
+      render() {
+        return <footer className='Footer'>
+          <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">联系我们</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  请发送邮件至我们的邮箱
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
 
-
-                    <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>福州</p>
-                    </div>
-                    <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>110</p>
-                    </div>
-                    <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>8888888@qq.com</p>
-                    </div>
-                    <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-                        <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
-                        <p>扫描加入我们</p>
-                    </div>
-
-                </footer>;
-            }
-
-        }
+              </div>
+            </div>
+          </div>
 
 
-        ReactDOM.render(
-            <React.Fragment>
-                <Nav />
-                <Body />
-                <Footer />
-            </React.Fragment>,
-            document.getElementById('container')
-        );
 
-    </script>
+          <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
+            <p>福州</p>
+          </div>
+          <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
+            <p>110</p>
+          </div>
+          <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"  data-toggle="modal" data-target="#myModal"></img>
+            <p>8888888@qq.com</p>
+          </div>
+          <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
+            <p>扫描加入我们</p>
+          </div>
+
+        </footer>;
+      }
+
+    }
+
+
+    ReactDOM.render(
+      <React.Fragment>
+        <Nav />
+        <Body />
+        <Footer />
+      </React.Fragment>,
+      document.getElementById('container')
+    );
+
+  </script>
 </body>
 
 </html>
