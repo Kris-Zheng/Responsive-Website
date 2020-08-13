@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
-<body id="container" class="container">
+<body id="container">
   <script type="text/babel">
 
     class Nav extends React.Component {
@@ -85,7 +85,7 @@
         const list = this.state.list.map((item, key) =>
           <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{ textAlign: 'center' }}>
             <h3>#{key + 1}</h3>
-            <img class="card-img-top" src={item.image} style={{ width: '100%', height: '50%' }}></img>
+            <img class="card-img-top" src={item.image} />
             <div class="card-body">
               <h4 class="card-title">电影名: {item.name}</h4>
               <p class="card-text">主演：{item.actor}</p>
@@ -94,9 +94,9 @@
           </div>
         );
 
-        return <main className="newscenter" class="row">
+        return <main>
           <h2 id='h4' class=" col-sm-12 col-lg-12 col-xl-12 col-12">新闻中心</h2>
-          <div class="row" >
+          <div class="row" style={{margin: 0, width:'100%'}}>
             {list}
           </div>
 
@@ -114,7 +114,6 @@
                 </li>
               </ul>
             </nav>
-
           </div>
         </main >;
       }
@@ -123,7 +122,8 @@
 
     class Footer extends React.Component {
       render() {
-        return <footer className='Footer'>
+
+        return <footer class="row justify-content-around">
 
           <div class="modal fade" id="myModal">
             <div class="modal-dialog">
@@ -144,27 +144,25 @@
           </div>
 
 
-
-          <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='position' class=" col-3 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/position.png' class="lazyload" width='30%' />
             <p>福州</p>
           </div>
-          <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='phone' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/phone.png' class="lazyload" width='30%' />
             <p>110</p>
           </div>
-          <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"  data-toggle="modal" data-target="#myModal"></img>
-            <p>8888888@qq.com</p>
+          <div id='email' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/email.png' class="lazyload" data-toggle="modal" data-target="#myModal" width='30%' />
+            <p>888</p>
           </div>
-          <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='QR' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/weixin-pic.jpg' class="lazyload" width='30%' />
             <p>扫描加入我们</p>
           </div>
 
         </footer>;
       }
-
     }
 
     ReactDOM.render(

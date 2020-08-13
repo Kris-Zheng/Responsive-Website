@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
-<body id="container" class="container">
+<body id="container">
   <script type="text/babel">
 
     class Nav extends React.Component {
@@ -96,7 +96,9 @@
 
     class Footer extends React.Component {
       render() {
-        return <footer className='Footer'>
+
+        return <footer class="row justify-content-around">
+
           <div class="modal fade" id="myModal">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -116,27 +118,25 @@
           </div>
 
 
-
-          <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='position' class=" col-3 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/position.png'  class="lazyload" width='30%'/>
             <p>福州</p>
           </div>
-          <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='phone' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/phone.png'  class="lazyload" width='30%'/>
             <p>110</p>
           </div>
-          <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload"  data-toggle="modal" data-target="#myModal"></img>
-            <p>8888888@qq.com</p>
+          <div id='email' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/email.png'  class="lazyload" data-toggle="modal" data-target="#myModal" width='30%'/>
+            <p>888</p>
           </div>
-          <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='QR' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/weixin-pic.jpg' class="lazyload" width='30%'/>
             <p>扫描加入我们</p>
           </div>
 
         </footer>;
       }
-
     }
 
 

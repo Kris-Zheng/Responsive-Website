@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
-<body id="container" class="container">
+<body id="container">
   <script type="text/babel">
     class Nav extends React.Component {
       render() {
@@ -108,7 +108,7 @@
         const list = this.state.list.map((item, key) =>
           <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{ textAlign: 'center' }}>
             <h3>#{key + 1}</h3>
-            <img class="card-img-top" src={item.image} style={{ width: '100%', height: '50%' }}></img>
+            <img class="card-img-top" src={item.image}></img>
             <div class="card-body">
               <h4 class="card-title">电影名: {item.name}</h4>
               <p class="card-text">主演：{item.actor}</p>
@@ -122,19 +122,19 @@
           <h2 id='h2'>服务范围</h2>
           <br></br>
           <div className='Service'>
-            <div class=" col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+            <div class="col-3 col-sm-3 col-lg-3 col-xl-3" style={{ textAlign: 'center' }}>
               <img data-src='images/fuwu1.png' style={{ width: "60%" }} class="lazyload"></img>
               <p>打击犯罪</p>
             </div>
-            <div class="col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+            <div class="col-3 col-sm-3 col-lg-3 col-xl-3" style={{ textAlign: 'center' }}>
               <img data-src='images/fuwu2.png' style={{ width: "60%" }} class="lazyload"></img>
               <p>维护和平</p>
             </div>
-            <div class="col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+            <div class="col-3 col-sm-3 col-lg-3 col-xl-3" style={{ textAlign: 'center' }}>
               <img data-src='images/fuwu3.png' style={{ width: "60%" }} class="lazyload"></img>
               <p>正义联盟</p>
             </div>
-            <div class="col-sm-6 col-lg-3 col-xl-3 col-6" style={{ textAlign: 'center' }}>
+            <div class="col-3 col-sm-3 col-lg-3 col-xl-3" style={{ textAlign: 'center' }}>
               <img data-src='images/fuwu4.png' style={{ width: "60%" }} class="lazyload"></img>
               <p>保卫地球</p>
             </div>
@@ -148,64 +148,43 @@
           <h2 id='h3'>团队介绍</h2>
           <br></br>
 
-          <div className='Team'>
-            <div id='Joker' class="row">
-              <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}>
-                <img
-                  data-sizes="auto"
-                  data-src="images/1.jpg"
-                  data-srcset="images/cat.jpg 300w,
-                                    images/1.jpg 600w,
-                                    images/cat.jpg 900w" class="lazyload"
-                  width="100%"
-                />
+          <div className='Team' style={{ margin: '0 auto' }}>
+
+            <div class="row">
+              <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
+                <img data-src="images/1.jpg" class="lazyload" width='100%'/>
               </div>
-              <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center" >小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
             </div>
-            <div id='Superman' class="row">
-              <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img
-                data-sizes="auto"
-                data-src="images/2.jpg"
-                data-srcset="images/cat.jpg 300w,
-                                    images/2.jpg 600w,
-                                    images/cat.jpg 900w" class="lazyload"
-                width="100%"
-              /></div>
-              <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+
+            <div class="row" id='reverse'>
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
+              <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
+                <img data-src="images/1.jpg" class="lazyload" width='100%' />
+              </div>
+
             </div>
-            <div id='Americancaptain' class="row">
-              <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img
-                data-sizes="auto"
-                data-src="images/3.jpg"
-                data-srcset="images/cat.jpg 300w,
-                                    images/3.jpg 600w,
-                                    images/cat.jpg 900w" class="lazyload"
-                width="100%"
-              /></div>
-              <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+
+
+            <div class="row">
+              <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
+                <img data-src="images/1.jpg" class="lazyload" width='100%'/>
+              </div>
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
             </div>
-            <div id='Batman' class="row">
-              <div id='img2' class="col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><img
-                data-sizes="auto"
-                data-src="images/4.jpg"
-                data-srcset="images/cat.jpg 300w,
-                                    images/4.jpg 600w,
-                                    images/cat.jpg 900w" class="lazyload"
-                width="100%"
-              /></div>
-              <div id='content2' class=" col-sm-6 col-lg-6 col-xl-6 col-12" style={{ minWidth: 235 }}><div>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div></div>
+
+            <div class="row" id='reverse'>
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
+              <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
+                <img data-src="images/1.jpg" class="lazyload" width='100%'/>
+              </div>
             </div>
 
           </div>
-
-
-
           <br></br>
-
-
           <h2 id='h4'>新闻中心</h2>
           <br></br>
-          <div class="row">
+          <div class="row" style={{margin:0, paddingBottom:50}}>
             {list}
           </div>
 
@@ -215,7 +194,8 @@
 
     class Footer extends React.Component {
       render() {
-        return <footer className='Footer'>
+
+        return <footer class="row justify-content-around">
 
           <div class="modal fade" id="myModal">
             <div class="modal-dialog">
@@ -236,26 +216,25 @@
           </div>
 
 
-          <div id='position' class=" col-6 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/position.png' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='position' class=" col-3 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/position.png'  class="lazyload" width='30%'/>
             <p>福州</p>
           </div>
-          <div id='phone' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/phone.png' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='phone' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/phone.png'  class="lazyload" width='30%'/>
             <p>110</p>
           </div>
-          <div id='email' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/email.png' style={{ width: '50%' }} class="lazyload" data-toggle="modal" data-target="#myModal"></img>
-            <p>8888888@qq.com</p>
+          <div id='email' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/email.png'  class="lazyload" data-toggle="modal" data-target="#myModal" width='30%'/>
+            <p>888</p>
           </div>
-          <div id='QR' class=" col-6 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/weixin-pic.jpg' style={{ width: '50%' }} class="lazyload"></img>
+          <div id='QR' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
+            <img data-src='images/weixin-pic.jpg' class="lazyload" width='30%'/>
             <p>扫描加入我们</p>
           </div>
 
         </footer>;
       }
-
     }
 
     ReactDOM.render(

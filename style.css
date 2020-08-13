@@ -1,104 +1,26 @@
-.container {
-    /* box-sizing: border-box;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; */
-    /* width: 100%; */
-}
 
+#container{
+
+}
 #icon{
     display: none;
 }
 
-#Joker {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#Superman {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-}
-
-#Americancaptain {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#Batman {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-}
-
-#img1 {
-    flex: 1;
-}
-
-#content1 {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-#img2 {
-    flex: 1;
-}
-
-#content2 {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-#img3 {
-    flex: 1;
-}
-
-#content3 {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-#img4 {
-    flex: 1;
-}
-
-#content4 {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.Footer {
-    background-color:rgba(248,249,250);
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
 .Service {
     background-color: rgba(248,249,250);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
 
-.Team {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 #h2, #h3, #h4 {
     text-align: center;
     margin: 0 auto;
+    padding: 30px 0;
 }
 
 .News {
@@ -148,6 +70,7 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 90px;
 }
 
 #aboutContent {
@@ -180,3 +103,28 @@
     width: 100%;
 }
 
+p{
+  font-size: 14px;
+}
+
+main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer{
+  background-color: lightgray;
+  margin: 0 !important;
+}
+
+#cards{
+  text-align: center;
+  border: 1px solid black;
+
+}
+
+@media screen and (max-width: 420px) {
+  #reverse{
+    flex-direction: column-reverse;
+  }
+}
