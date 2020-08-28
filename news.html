@@ -59,7 +59,7 @@
     class Body extends React.Component {
       constructor(props) {
         super(props)
-        this.state = { list: [], currentpage:1 };
+        this.state = { list: [], currentpage: 1 };
       }
 
       componentDidMount() {
@@ -67,10 +67,10 @@
         console.log(this.state.currentpage)
       }
 
-      changepage = async(pagedata) => {
+      changepage = async (pagedata) => {
         await this.setState({ currentpage: pagedata });
 
-        const {currentpage} = this.state;
+        const { currentpage } = this.state;
         const baseUrl = `https://mock-api.com/dnooblnX.mock/news?page=${currentpage}`
 
         axios.get(baseUrl)
@@ -81,22 +81,22 @@
           })
       }
 
-      minus = async() => {
-        const {currentpage} = this.state;
-        
-        let minusone = currentpage ;
+      minus = async () => {
+        const { currentpage } = this.state;
 
-        if (currentpage > 1){
+        let minusone = currentpage;
+
+        if (currentpage > 1) {
           this.changepage(minusone - 1);
         }
       }
 
-      add = async() => {
-        const {currentpage} = this.state;
-        
-        let add = currentpage ;
+      add = async () => {
+        const { currentpage } = this.state;
 
-        if (currentpage < 3){
+        let add = currentpage;
+
+        if (currentpage < 3) {
           this.changepage(add + 1);
         }
       }
@@ -106,7 +106,7 @@
       }
 
       render() {
-        const {currentpage} = this.state;
+        const { currentpage } = this.state;
         const list = this.state.list.map((item, key) =>
           <div class="card col-sm-4 col-lg-4 col-xl-4 col-12" key={item.id} onClick={() => this.toPage(key)} style={{ textAlign: 'center' }}>
             <h3>#{key + 1}</h3>
@@ -121,21 +121,22 @@
 
         return <main>
           <h2 id='h4' class=" col-sm-12 col-lg-12 col-xl-12 col-12">新闻中心</h2>
-          <div class="row" style={{ margin: 0, width: '100%' }}>
+          <div class="row no-gutters" style={{ margin: 0, width: '100%' }}>
             {list}
           </div>
+          <div class="row no-gutters">
+            <div class="page col-sm-12 col-lg-12 col-xl-12 col-12">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item" onClick={() => this.minus()}><a class="page-link" href="#">pre</a></li>
+                  <li class="page-item" onClick={() => this.changepage(1)}><a class="page-link" href="#" style={currentpage === 1 ? { color: 'red' } : {}}>1</a></li>
+                  <li class="page-item" onClick={() => this.changepage(2)}><a class="page-link" href="#" style={currentpage === 2 ? { color: 'red' } : {}}>2</a></li>
+                  <li class="page-item" onClick={() => this.changepage(3)}><a class="page-link" href="#" style={currentpage === 3 ? { color: 'red' } : {}}>3</a></li>
+                  <li class="page-item" onClick={() => this.add()}><a class="page-link" href="#">next</a></li>
 
-          < div class="page col-sm-12 col-lg-12 col-xl-12 col-12">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item" onClick={() => this.minus()}><a class="page-link" href="#">pre</a></li>
-                <li class="page-item" onClick={() => this.changepage(1)}><a class="page-link" href="#" style={currentpage === 1 ? {color:'red'} : {}}>1</a></li>
-                <li class="page-item" onClick={() => this.changepage(2)}><a class="page-link" href="#" style={currentpage === 2 ? {color:'red'} : {}}>2</a></li>
-                <li class="page-item" onClick={() => this.changepage(3)}><a class="page-link" href="#" style={currentpage === 3 ? {color:'red'} : {}}>3</a></li>
-                <li class="page-item" onClick={() => this.add()}><a class="page-link" href="#">next</a></li>
-      
-              </ul>
-            </nav>
+                </ul>
+              </nav>
+            </div>
           </div>
         </main >;
       }
@@ -145,7 +146,7 @@
     class Footer extends React.Component {
       render() {
 
-        return <footer class="row justify-content-around">
+        return <footer class="row no-gutters justify-content-around">
 
           <div class="modal fade" id="myModal">
             <div class="modal-dialog">
