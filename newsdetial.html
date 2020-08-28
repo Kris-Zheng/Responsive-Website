@@ -60,8 +60,9 @@
 
       componentDidMount() {
         const id = window.location.search;
+
         console.log(id);
-        const num = id.substring(6, 9);
+        const num = id.substr(1);
         console.log(num)
 
         axios.get(`https://mock-api.com/dnooblnX.mock/${num}`)
