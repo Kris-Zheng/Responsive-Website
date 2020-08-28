@@ -10,13 +10,17 @@
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- 新 Bootstrap4 核心 CSS 文件 -->
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"
+    integrity="sha256-Ww++W3rXBfapN8SZitAvc9jw2Xb+Ixt0rvDsmWmQyTo=" crossorigin="anonymous">
   <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/popper.min.js"
+    integrity="sha256-O17BxFKtTt1tzzlkcYwgONw4K59H+r1iI8mSQXvSf5k=" crossorigin="anonymous"></script>
   <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"
+    integrity="sha256-ecWZ3XYM7AwWIaGvSdmipJ2l1F4bN9RXW6zgpeAiZYI=" crossorigin="anonymous"></script>
   <script src="lazysizes.min.js" async=""></script>
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -92,7 +96,7 @@
       }
 
       componentDidMount() {
-        axios.get('https://mock-api.com/dnooblnX.mock/1')
+        axios.get('https://mock-api.com/dnooblnX.mock/news?page=1')
           .then(res => {
             console.log(res.data.data)
             this.setState({ list: res.data.data })
@@ -117,7 +121,7 @@
           </div>
         );
 
-        return <main>
+        return <main >
           <br></br>
           <h2 id='h2'>服务范围</h2>
           <br></br>
@@ -150,33 +154,35 @@
 
           <div className='Team' style={{ margin: '0 auto' }}>
 
-            <div class="row">
-              <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
-                <img data-src="images/1.jpg" class="lazyload" width='100%'/>
-              </div>
-              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center" >小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
-            </div>
-
-            <div class="row" id='reverse'>
-              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
+            <div class="row no-gutters">
               <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
                 <img data-src="images/1.jpg" class="lazyload" width='100%' />
               </div>
-
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center"  >
+                <p style={{ padding: '10px 20px'}}>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</p></div>
             </div>
 
-
-            <div class="row">
+            <div class="row no-gutters" id='reverse'>
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">
+                <p style={{ padding: '10px 20px'}}>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</p></div>
               <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
-                <img data-src="images/1.jpg" class="lazyload" width='100%'/>
+                <img data-src="images/1.jpg" class="lazyload" width='100%' />
               </div>
-              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
             </div>
 
-            <div class="row" id='reverse'>
-              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</div>
+            <div class="row no-gutters">
               <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
-                <img data-src="images/1.jpg" class="lazyload" width='100%'/>
+                <img data-src="images/1.jpg" class="lazyload" width='100%' />
+              </div>
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">
+                <p style={{ padding: '10px 20px'}}>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</p></div>
+            </div>
+
+            <div class="row no-gutters" id='reverse'>
+              <div class=" col-sm-6 col-lg-6 col-xl-6 col-12 align-self-center">
+                <p style={{ padding: '10px 20px'}}>小丑是美国DC漫画旗下的超级反派、蝙蝠侠的头号死敌，他的真实姓名和身世至今仍是一个谜，初次登场于《蝙蝠侠》第1期（1940年6月），由鲍勃·凯恩、比尔·芬格和杰瑞·罗宾逊创作。其被设定成一个绿色头发，惨白皮肤，咧着嘴涂着红色口红，穿着紫色衣服的怪人。而小丑那张“大王”的扑克牌名片，则是杰瑞·罗宾逊独家的创意</p></div>
+              <div class="col-sm-6 col-lg-6 col-xl-6 col-12">
+                <img data-src="images/1.jpg" class="lazyload" width='100%' />
               </div>
             </div>
 
@@ -184,7 +190,7 @@
           <br></br>
           <h2 id='h4'>新闻中心</h2>
           <br></br>
-          <div class="row" style={{margin:0, paddingBottom:50}}>
+          <div class="row" style={{ margin: 0, paddingBottom: 50 }}>
             {list}
           </div>
 
@@ -217,19 +223,19 @@
 
 
           <div id='position' class=" col-3 col-sm-3 col-lg-3 col-xl-3 " style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/position.png'  class="lazyload" width='30%'/>
+            <img data-src='images/position.png' class="lazyload" width='30%' />
             <p>福州</p>
           </div>
           <div id='phone' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/phone.png'  class="lazyload" width='30%'/>
+            <img data-src='images/phone.png' class="lazyload" width='30%' />
             <p>110</p>
           </div>
           <div id='email' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/email.png'  class="lazyload" data-toggle="modal" data-target="#myModal" width='30%'/>
+            <img data-src='images/email.png' class="lazyload" data-toggle="modal" data-target="#myModal" width='30%' />
             <p>888</p>
           </div>
           <div id='QR' class=" col-3 col-sm-3 col-lg-3 col-xl-3" style={{ padding: 10, textAlign: 'center' }}>
-            <img data-src='images/weixin-pic.jpg' class="lazyload" width='30%'/>
+            <img data-src='images/weixin-pic.jpg' class="lazyload" width='30%' />
             <p>扫描加入我们</p>
           </div>
 
